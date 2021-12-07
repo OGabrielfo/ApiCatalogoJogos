@@ -93,7 +93,7 @@ namespace ApiCatalogoJogos.Controllers.V1
         }
 
         [HttpDelete("{idJogo:guid}")]
-        public async Task<AcceptedResult> ApagarJogo([FromRoute] Guid idJogo)
+        public async Task<ActionResult> ApagarJogo([FromRoute] Guid idJogo)
         {
             try
             {
@@ -102,7 +102,6 @@ namespace ApiCatalogoJogos.Controllers.V1
                 return Ok();
             }
             catch (JogoNaoCadastradoException ex)
-
             {
                 return NotFound("Não existe este jogo");
             }
